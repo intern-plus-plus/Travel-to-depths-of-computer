@@ -1,0 +1,39 @@
+<body>
+    <div id="item1" style="height: 500;width: 500; background-color: #000000;"></div>
+    <div id="item2" style="height: 500;width: 500; background-color: #000000;"></div>
+    <div id="item3" style="height: 500;width: 500; background-color: #000000;"></div>
+</body>
+
+<script>
+
+    function setColor(color,id){
+        document.getElementById(id).style.backgroundColor = color
+    }
+
+    function r255(){
+        return Math.random() * 255
+    }
+
+    function avg(color1,color2){
+        var r = Math.round(color1[0] + color2[0]) / 2
+        var g = Math.round(color1[1] + color2[1]) / 2
+        var b = Math.round(color1[2] + color2[2]) / 2
+        return [r,g,b]
+    }
+
+    var color1 = [r255(),r255(),r255()]
+    var color2 = [r255(),r255(),r255()]
+    var avgColor = avg(color1,color2)
+
+    setColor(`rgb(${color1[0]},${color1[1]},${color1[2]})`,"item1")
+    setColor(`rgb(${color2[0]},${color2[1]},${color2[2]})`,"item2")
+    setColor(`rgb(${avgColor[0]},${avgColor[1]},${avgColor[2]})`,"item3")
+
+    // let red = 255
+    // let blue = 0
+    // setInterval(() => {
+    //     red--
+    //     blue++
+    // }, 10);
+
+</script>
